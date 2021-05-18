@@ -33,7 +33,7 @@
 /* General styles */
 
 body {
-    background: var(--clr-dark);
+    background: var(--clr-light);
     color: var(--clr-dark);
     margin: 0;
     font-family: var(--ff-primary);
@@ -87,10 +87,93 @@ strong{
     position: relative;
     display: inline-block;
 }
+/*header*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1cm;
+    background:var(--clr-accent);
+}
+.logo{
+    max-width: 50px;
+}
 .nav{
-    display: none;
+    position: fixed;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translate(100%);
+    transition: transform 250ms cubic-bezier(-5, 0, -5, 1);
 }
 
+.nav_list{
+    list-style: none;
+    display: flex;
+    height:50%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin:0;
+    padding: 0;
+}
+
+.nav_link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+.nav_link:hover{
+    color: var(--clr-accent);
+}
+
+.nav_open .nav{
+    transform: translateX(0);
+    transition: transform 500ms;
+}
+.nav_open .nav-toggle{
+    position: fixed;
+}
+
+.extra{
+
+    display:block;
+    position: relative;
+}
+.extra,
+.extra::before,
+.extra::after{
+    background: var(--clr-accent);
+    height: 3px;
+    width: 2cm;
+    border-radius: 1cm;
+    transition: transform 250ms ease-in-out;
+}
+
+.extra::before,
+.extra::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.extra::before{top: 6px;}
+.extra::after{bottom: 6px;}
+.nav_toggle{
+    padding: 0.5cm;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    z-index: 1000;
+}
 
 /*intro edits*/
 .intro{
@@ -166,4 +249,27 @@ strong{
 }
 .btn2:hover{
     transform: scale(1.1);
+}
+/*footer*/
+.footer{
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    text-align: center;
+    padding: 2.5cm 0;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+.footer_email:hover,
+.footer_linkedin:hover,
+.footer_github:hover{
+    opacity: .7; 
+    /*display:flex;*/
+    margin: 0 0.5cm;
+}
+
+.footer_email,
+.footer_github,
+.footer_linkedin{
+    margin: 1cm;
 }

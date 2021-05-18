@@ -61,7 +61,7 @@ h3{
         grid-template-columns:auto;
         width: max-content;
         max-width: fit-content;
-        grid-column-gap: 10cm;
+        grid-column-gap: 7cm;
         grid-row-gap: 2cm;
         margin: 0;
     }
