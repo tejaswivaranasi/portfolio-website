@@ -92,7 +92,7 @@ strong{
     display: flex;
     justify-content: space-between;
     padding: 1cm;
-    background: var(--clr-accent);
+    background:var(--clr-accent);
 }
 .logo{
     max-width: 50px;
